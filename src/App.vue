@@ -51,6 +51,8 @@ export default {
 @import "./style/common.scss";
 
 #app {
+  background-color: #1e2d3b;
+
   .loading-icon {
     font-size: 60px;
     color: #1ed55e;
@@ -64,10 +66,6 @@ export default {
     background-color: #2e3a46;
     font-size: 50px;
     color: #1ed55e;
-  }
-
-  main {
-    background-color: #1e2d3b;
   }
 }
 </style>
