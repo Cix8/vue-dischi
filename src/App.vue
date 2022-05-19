@@ -5,13 +5,20 @@
         <i class="fab fa-spotify"></i>
       </div>
     </header>
+    <main class="py-5">
+      <ProductsList />
+    </main>
   </div>
 </template>
 
 <script>
+import ProductsList from "./components/ProductsList.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: {
+    ProductsList,
+  },
 };
 </script>
 
@@ -26,5 +33,9 @@ header {
     font-size: 50px;
     color: #1ed55e;
   }
+}
+
+main {
+  background-color: #1e2d3b;
 }
 </style>
