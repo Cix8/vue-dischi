@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row row-cols-5">
         <SingleDisc
-          v-for="(item, index) in products"
+          v-for="(item, index) in productsArray"
           :key="index"
           :product="item"
         />
@@ -14,12 +14,14 @@
 
 <script>
 import SingleDisc from "./SingleDisc.vue";
-import axios from "axios";
 
 export default {
   name: "ProductsList",
   components: {
     SingleDisc,
+  },
+  props: {
+    productsArray: Array,
   },
   data() {
     return {
@@ -27,11 +29,7 @@ export default {
     };
   },
   created() {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/array/music")
-      .then((resp) => {
-        this.products = resp.data.response;
-      });
+    this.products = this.productsArray;
   },
 };
 </script>
