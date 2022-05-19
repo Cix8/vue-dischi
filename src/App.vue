@@ -2,7 +2,7 @@
   <div id="app">
     <template v-if="loading">
       <div
-        class="icon-container w-100 vh-100 d-flex flex-column justify-content-center align-items-center"
+        class="loading-icon w-100 vh-100 d-flex flex-column justify-content-center align-items-center"
       >
         <i class="fas fa-running"></i>
         <p class="fw-bold">LOADING...</p>
@@ -51,8 +51,8 @@ export default {
 @import "./style/common.scss";
 
 #app {
-  .icon-container {
-    font-size: 50px;
+  .loading-icon {
+    font-size: 60px;
     color: #1ed55e;
 
     i {
@@ -62,6 +62,8 @@ export default {
   header {
     padding: 10px 20px;
     background-color: #2e3a46;
+    font-size: 50px;
+    color: #1ed55e;
   }
 
   main {
