@@ -1,13 +1,15 @@
 <template>
-  <div class="container">
-    <div class="row row-cols-5">
-      <SingleDisc
-        v-for="(item, index) in products"
-        :key="index"
-        :product="item"
-      />
+  <section>
+    <div class="container">
+      <div class="row row-cols-5">
+        <SingleDisc
+          v-for="(item, index) in products"
+          :key="index"
+          :product="item"
+        />
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -34,4 +36,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+section {
+  padding: 0 230px;
+}
+</style>

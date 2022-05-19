@@ -28,8 +28,8 @@ export default {
   border: 10px solid #1e2d3b;
 
   .img-container {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 
   .title,
