@@ -1,5 +1,5 @@
 <template>
-  <div class="container w-75">
+  <div class="container">
     <div class="row row-cols-5">
       <SingleDisc
         v-for="(item, index) in products"
