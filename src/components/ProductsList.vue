@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <div class="row row-cols-5">
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
         <SingleDisc
           v-for="(item, index) in productsArray"
           :key="index"
@@ -34,8 +34,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-section {
-  padding: 0 230px;
-}
-</style>
+<style lang="scss" scoped></style>

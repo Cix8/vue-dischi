@@ -1,6 +1,6 @@
 <template>
   <div class="col text-center py-4">
-    <div class="img-container d-inline-block">
+    <div class="img-container d-inline-block mx-auto">
       <img :src="product.poster" :alt="product.author + ', ' + product.title" />
     </div>
     <div class="title text-white mx-auto py-3">
