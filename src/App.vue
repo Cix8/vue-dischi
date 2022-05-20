@@ -9,30 +9,30 @@
       </div>
     </template>
     <template v-else>
-      <header>
-        <div class="icon-container">
-          <i class="fab fa-spotify"></i>
-        </div>
-      </header>
+      <AppHeader @userChoice="selectGenre($event)" />
       <main class="py-5">
-        <ProductsList :productsArray="mainData" />
+        <ProductsList :productsArray="displayData" />
       </main>
     </template>
   </div>
 </template>
 
 <script>
+import AppHeader from "./components/AppHeader.vue";
 import ProductsList from "./components/ProductsList.vue";
 import axios from "axios";
 
 export default {
   name: "App",
   components: {
+    AppHeader,
     ProductsList,
   },
   data() {
     return {
       mainData: [],
+      displayData: [],
+      selectedGenre: "",
       loading: true,
     };
   },
@@ -41,8 +41,19 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((resp) => {
         this.mainData = resp.data.response;
+        this.displayData = this.mainData;
         this.loading = false;
       });
+  },
+  methods: {
+    selectGenre(keyWord) {
+      this.displayData = this.mainData.filter((element) => {
+        if (element.genre.includes(keyWord.trim())) {
+          return true;
+        }
+      });
+      console.log(this.displayData);
+    },
   },
 };
 </script>
@@ -51,8 +62,6 @@ export default {
 @import "./style/common.scss";
 
 #app {
-  background-color: #1e2d3b;
-
   .loading-icon {
     font-size: 60px;
     color: #1ed55e;
@@ -60,12 +69,6 @@ export default {
     i {
       font-size: 100px;
     }
-  }
-  header {
-    padding: 10px 20px;
-    background-color: #2e3a46;
-    font-size: 50px;
-    color: #1ed55e;
   }
 }
 </style>
