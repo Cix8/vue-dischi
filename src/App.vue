@@ -49,7 +49,7 @@ export default {
       this.displayData = this.mainData.filter((element) => {
         if (
           element.genre.includes(keyWord.trim()) ||
-          element.author.toLowerCase().includes(keyWord.trim())
+          element.author.toLowerCase().includes(keyWord.toLowerCase().trim())
         ) {
           return true;
         }
