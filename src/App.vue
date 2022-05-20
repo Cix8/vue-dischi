@@ -32,7 +32,6 @@ export default {
     return {
       mainData: [],
       displayData: [],
-      selectedGenre: "",
       loading: true,
     };
   },
