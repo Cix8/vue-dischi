@@ -48,7 +48,10 @@ export default {
   methods: {
     selectGenre(keyWord) {
       this.displayData = this.mainData.filter((element) => {
-        if (element.genre.includes(keyWord.trim())) {
+        if (
+          element.genre.includes(keyWord.trim()) ||
+          element.author.toLowerCase().includes(keyWord.trim())
+        ) {
           return true;
         }
       });
